@@ -1,22 +1,27 @@
-<?php
+<?php 
 
-class RiotApi {
+class RiotApi{
 
-	private $data =null;
+	private $data = null;
 
+	//loads the above private variable
 	public function load($data){
 		$this->data = $data;
 	}
 
-	// insert API calls here.
-	public function getPlayerInfo($region, $name){
-		$url = "https://{$region}.api.pvp.net/api/lol/{$region}/v1.4/summoner/" . rawurlencode($name) . "?api_key=" . ApiKey;
+	public function searchSummoner($region, $name){
+		
+		//$apiKey
+		$url = "https://{$region}.api.pvp.net/api/lol/{$region}/v1.4/summoner/by-name/" . rawurlencode($name) . "?api_key=" . ApiKey;
 		$data = @file_get_contents($url);
 
-		Engine::$response= parseHeaders($http_response_header);
+		//set response code
+		Engine::$response = parseHeaders($http_response_header);
 
+		// //if the API call was successfull (summoner found)
 		if(Engine::$response['response_code'] == 200){
 			$data = json_decode($data);
+			//Riot returns an object with Keys labeled by the name of who we are search. The name is made lowercase, and all spaces in the name get removed.
 			$index = preg_replace('/\s+/', '', $name);
 
 			return $data->$index;
@@ -29,24 +34,26 @@ class RiotApi {
 		}
 	}
 
-	public function findTeam($region, $id){
-		$url = "https://{$region}.api.pvp.net/api/lol/{$region}/v2.4/team/by-summoner/{$id}?api_key=" . ApiKey;
-		$data = @file_get_contents($url);
-		$data = json_decode($data);
-		//THIS NEEDS TO BE FIXED SOMEHOW BEFORE GOING LIVE
-		$filter = $data->$id;
-		return $filter[0];
+	public function getLeague($region, $id){
+		$url = "https://{$region}.api.pvp.net/api/lol/{$region}/v2.5/league/by-summoner/{$id}?api_key=" . ApiKey;
+		$league = @file_get_contents($url);
+		$league = json_decode($league);
+		return $league;
 	}
-	public function getMatchInfo($region,$id){
-		$url = "https://{$region}.api.pvp.net/api/lol/{$region}/v2.2/match/{$id}?api_key=" . ApiKey;
-		$match = @file_get_contents($url);
-		$match = json_decode($match);
-		return $match;
+
+	public function getMatches($region, $id){
+		
+		$url =   "https://{$region}.api.pvp.net/api/lol/{$region}/v1.3/game/by-summoner/{$id}/recent?api_key=" . ApiKey;
+		$matches = @file_get_contents($url);
+		$matches = json_decode($matches);
+		return $matches;
 	}
+
 	public function getChampions(){
-		$champions = @file_get_contents("http://ddragon.leagueoflegends.com/cdn/5.19.1/data/en_US/champion.json");
-		$champions = json_decode($champions);
-		return $champions;
+		$url = "http://ddragon.leagueoflegends.com/cdn/5.2.1/data/en_US/champion.json";
+		$champs = @file_get_contents($url);
+		$champs = @json_decode($champs);
+		return $champs; 
 	}
 }
 ?>

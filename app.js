@@ -7,6 +7,7 @@ var log = null;
 angular.module('creepScore', [
 	'ngRoute',
 	'creepScore.search',
+	'creepScore.main',
 	'creepScore.version'])
 
 .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {

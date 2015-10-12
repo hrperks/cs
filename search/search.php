@@ -1,15 +1,16 @@
-<?php
-class search extends RiotApi {
+<?php 
 
-		private $data = null;
+class search extends RiotApi{
 
-		public function load($data){
+	private $data = null;
+
+	//loads the above private variable
+	public function load($data){
 		$this->data = $data;
-		}
+	}
 
-		public function getProfile(){
-			return $this->getPlayerInfo($this->data->region, $this->data->name);
-		}
-
+	public function getSummoner(){
+		return $summoner = $this->searchSummoner($this->data->region, $this->data->name);
+	}
 }
 ?>
