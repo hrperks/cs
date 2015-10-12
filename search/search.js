@@ -28,9 +28,29 @@ angular.module('creepScore.search',['ngRoute'])
 		}
 	}
 })
-.controller('searchController', ['$scope','SummonerService', function($scope, SummonerService){
+.controller('searchController', ['$scope','$timeout','SummonerService','Search', function($scope,$timeout, SummonerService,Search){
 	$scope.regionList= [
 	{name:"North America", value:"NA"}
 	];
 	$scope.selRegion = $scope.regionList[0];
+
+	$scope.findSummoner = function(key){
+		key = key.keyCode || key.which;
+
+		if(key === 13){
+			if($scope.summonerName.length > 0){
+				$timeout(function(){
+					var data = {region: $scope.selRegion.value.toLowerCase(),name: $scope.summonerName};
+
+					Search.getProfile(data).then(function(summoner){
+						SummonerService.summoner= summoner.data;
+						$location.path('/main/'+data.region+'/'+data.name);
+					})
+					.catch(function(){
+
+					})
+				},250);
+			} else angular.element("#summonerName").focus();
+		}
+	}
 }])
