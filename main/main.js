@@ -8,7 +8,7 @@ angular.module('creepScore.main',['ngRoute'])
 		controller: 'mainController'
 	})
 }])
-.controller('mainController', ['$scope','$routeParams', 'SummonerService', function($scope,$routeParams,SummonerService){
+.controller('mainController', ['$scope','$routeParams', 'SummonerService', function($scope,$routeParams,SummonerService){
 		$scope.name = $routeParams.name;
 		$scope.region = $routeParams.region;
 }])
