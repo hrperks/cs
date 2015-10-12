@@ -38,7 +38,7 @@ angular.module('creepScore.search',['ngRoute'])
 			key=key.keyCode || key.which;
 		if(key===13){
 			var data = {region: $scope.selRegion.value.toLowerCase(), name: $scope.summonerName.toLowerCase()}
-			Home.getProfile(data).then(function(response){
+			Search.getProfile(data).then(function(response){
 				SummonerService.summoner=response.data;
 				$location.path('/summoner/'+data.region+'/'+$scope.summonerName);
 			})
