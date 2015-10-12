@@ -35,22 +35,16 @@ angular.module('creepScore.search',['ngRoute'])
 	$scope.selRegion = $scope.regionList[0];
 
 	$scope.findSummoner = function(key){
-		key = key.keyCode || key.which;
-
-		if(key === 13){
-			if($scope.summonerName.length > 0){
-				$timeout(function(){
-					var data = {region: $scope.selRegion.value.toLowerCase(),name: $scope.summonerName};
-
-					Search.getProfile(data).then(function(summoner){
-						SummonerService.summoner= summoner.data;
-						$location.path('/main/'+data.region+'/'+data.name);
-					})
-					.catch(function(){
-
-					})
-				},250);
-			} else angular.element("#summonerName").focus();
+			key=key.keyCode || key.which;
+		if(key===13){
+			var data = {region: $scope.selRegion.value.toLowerCase(), name: $scope.summonerName.toLowerCase()}
+			Home.getProfile(data).then(function(response){
+				SummonerService.summoner=response.data;
+				$location.path('/summoner/'+data.region+'/'+$scope.summonerName);
+			})
+			.catch(function(){
+				$scope.errorMessage = 'failed to lookup summoner';
+			})
 		}
 	}
 }])
