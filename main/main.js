@@ -26,36 +26,36 @@ angular.module('creepScore.main',['ngRoute'])
 					if(champion.tags.length==1){
 						switch(champion.tags){
 							case "Marksman":
-								Roles.adc.push(champion);
+								Roles.adc.push({champion,level:0,recentScores:[]});
 								break;
 							case "Mage":
-								Roles.mid.push(champion);
+								Roles.mid.push({champion,level:0,recentScores:[]});
 								break;
 							case "Assassin":
-								Roles.mid.push(champion);
+								Roles.mid.push({champion,level:0,recentScores:[]});
 								break;
 							case "Fighter":
-								Roles.top.push(champion);
+								Roles.top.push({champion,level:0,recentScores:[]});
 								break;
 							case "Tank":
-								Roles.top.push(champion);
+								Roles.top.push({champion,level:0,recentScores:[]});
 								break;
 						}
 					}
 					else{
 						if(champion.tags[0]!="Support" || champion.tags[1]!="Support"){
 							if(champion.tags[0]=="Mage" || champion.tags[1]=="Mage"){
-								Roles.mid.push(champion);
+								Roles.mid.push({champion,level:0,recentScores:[]});
 							}
 							else if(champion.tags[0]=="Tank" || champion.tags[1]=="Tank"){
-								Roles.top.push(champion);
+								Roles.top.push({champion,level:0,recentScores:[]});
 							}
 							else if(champion.tags[0]=="Fighter" || champion.tags[1]=="Fighter"){
-								Roles.top.push(champion);
+								Roles.top.push({champion,level:0,recentScores:[]});
 							}
 						}
 						else if(champion.tags[0]=="Marksman" || champion.tags[1]=="Marksman"){
-							Roles.adc.push(champion);
+							Roles.adc.push({champion,level:0,recentScores:[]});
 							//ashe is a special cookie
 						}
 					}
