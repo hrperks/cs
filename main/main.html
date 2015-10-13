@@ -5,11 +5,11 @@
 		</div>
 	</div>
 	<div class="row" ng-repeat="dis in display" >
-		<div ng-if="dis.champs">
+		<div ng-if="dis.champs.length()>0">
 		<h1> {{dis.title}} </h1>
 		<hr>
 		<div class="col-sm-1" ng-repeat="champ in dis.champs">
-			<p>MEEP! </p>
+			<p>{{champ.champion.name}}</p>
 		</div>
 		</div>
 	</div>
