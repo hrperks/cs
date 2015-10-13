@@ -143,19 +143,20 @@ angular.module('creepScore.main',['ngRoute'])
 			}
 		}
 		$scope.levelup = function(List, Champ){
+			var index = findWithAttr(List.champs,"champion",Champ.champion);
 			switch($scope.roleSel.value){
 				case "mid":
-					$scope.mid[List.title-1].champs.splice(findWithAttr(List.champs,"champion",Champ.champion),1);
+					$scope.mid[List.title-1].champs.splice(index,1);
 					Champ.level++;
 					$scope.mid[List.title].champs.push(Champ);
 					break;
 				case "adc":
-					$scope.adc[List.title-1].champs.splice(findWithAttr(List.champs,"champion",Champ.champion),1);
+					$scope.adc[List.title-1].champs.splice(index,1);
 					Champ.level++;
 					$scope.adc[List.title].champs.push(Champ);
 					break;
 				case "top":
-					$scope.top[List.title-1].champs.splice(findWithAttr(List.champs,"champion",Champ.champion),1);
+					$scope.top[List.title-1].champs.splice(index,1);
 					Champ.level++;
 					$scope.top[List.title].champs.push(Champ);
 					break;
