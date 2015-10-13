@@ -4,7 +4,13 @@
 			<select name="role" id="role" ng-model="roleSel" ng-options="roles.value for roles in roleList" ng-change="test()"></select>
 		</div>
 	</div>
-	<div class="row" ng-repeat="dis in display.levelZero">
-		<p>{{dis.champion.name}} </p>
+	<div class="row" ng-repeat="dis in display" >
+		<div ng-if="dis.champs.length>=0">
+		<h1> {{dis.title}} </h1>
+		<hr>
+		<div class="col-sm-1" ng-repeat="champ in dis.champs">
+			<p>{{champ.name}} </p>
+		</div>
+		</div>
 	</div>
 </div>
