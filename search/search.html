@@ -2,12 +2,12 @@
 	<div class ="row">
 		<div class ="col-sm-4 col-sm-offset-4" style="margin-top:10%">
 			<div class="input-group">
-				<input type="text" id="summonerName" class="form-control" ng-model="summonerName" ng-init="summonerName=''" ng-keypress="searchSummoner($event)">
+				<input type="text" id="summonerName" class="form-control" ng-model="summonerName" ng-init="summonerName=''" ng-keypress="searchSummoners($event)">
 				<span class="input-group-btn">
 						<select name="region" class="form-control" style="width: 82px" ng-model="selRegion" ng-options="region.value for region in regionList"></select>
 						</span>
 						<span class="input-group-btn">
-							<button type="button" class="btn btn-royal" ng-click="findSummoner({keyCode: 13})">R</button>
+							<button type="button" class="btn btn-royal" ng-click="searchSummoners({keyCode: 13})">R</button>
 						</span>
 			</div>
 		</div>
