@@ -123,21 +123,18 @@ angular.module('creepScore.main',['ngRoute'])
 		{name:"attack Damage Carry", value:"adc"},
 		{name:"Top Lane", value:"top"},
 		];
-		$scope.display='';
-		$scope.testOne="MidLane";
-		$scope.testTwo="ADC";
-		$scope.testThree="TOP lane";
+		$scope.display={};
 		$scope.roleSel = $scope.roleList[0];
 		$scope.test = function(){
 			switch($scope.roleSel.value){
 				case "mid":
-					$scope.display=$scope.testOne;
+					$scope.display=$scope.mid;
 					break;
 				case "adc":
-					$scope.display=$scope.testTwo;
+					$scope.display=$scope.adc;
 					break;
 				case "top":
-					$scope.display=$scope.testThree;
+					$scope.display=$scope.top;
 					break;
 			}
 		}
