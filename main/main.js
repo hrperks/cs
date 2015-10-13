@@ -21,7 +21,7 @@ angular.module('creepScore.main',['ngRoute'])
 					
 					angular.forEach(ChampionService.championList,function(champion){
 					if(champion.tags.length==1){
-						switch(champion.tags){
+						switch(champion.tags[0]){
 							case "Marksman":
 								Roles.adc.push({champion,level:0,recentScores:[]});
 								break;
@@ -68,7 +68,7 @@ angular.module('creepScore.main',['ngRoute'])
 				//Experimental
 				angular.forEach(ChampionService.championList,function(champion){
 					if(champion.tags.length==1){
-						switch(champion.tags){
+						switch(champion.tags[0]){
 							case "Marksman":
 								Roles.adc.push({champion,level:0,recentScores:[]});
 								break;
