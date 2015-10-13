@@ -137,7 +137,7 @@ angular.module('creepScore.main',['ngRoute'])
 				case "top":
 					$scope.display=$scope.top;
 					break;
-				case default:
+				default:
 					$scope.display={};
 					break;
 			}
