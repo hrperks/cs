@@ -40,7 +40,7 @@ angular.module('creepScore.main',['ngRoute'])
 						}
 					}
 					else{
-						if(champion.tags[0]!="Support" || champion.tags[1]!="Support"){
+						if(champion.tags[0]!="Support" && champion.tags[1]!="Support"){
 							if(champion.tags[0]=="Mage" || champion.tags[1]=="Mage"){
 								Roles.mid.push({champion,level:0,recentScores:[]});
 							}
