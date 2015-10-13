@@ -94,9 +94,9 @@ angular.module('creepScore.main',['ngRoute'])
 					break;
 			}
 		}
-		Main.setUpChampions().then(success){
+		Main.setUpChampions().then(function(success){
 			$scope.adc=success.adc;
 			$scope.mid=success.mid;
 			$scope.topLane =success.top;
-		}
+		});
 }])
