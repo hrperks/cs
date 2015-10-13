@@ -12,9 +12,9 @@ angular.module('creepScore.search',['ngRoute'])
 	return{
 		searchSummoner: function(data){
 			var p = $q.defer();
-			if(ChampionService.championList.length==0){data.getChampions=true;}
-			$http.post('engine.php?method=route',{class:'search',function:'getSummoner', data: data})
+			$http.get("http://ddragon.leagueoflegends.com/cdn/5.2.1/data/en_US/champion.json")
 				.then(function(success){
+					ChampionService.setChampionList(success.data);
 					log(success, 'search.searchSummoner success-');
 					p.resolve(success)
 				}, function(){
