@@ -68,7 +68,7 @@ angular.module('creepScore.main',['ngRoute'])
 		 }
 	}
 })
-.controller('mainController', ['$scope','$routeParams', 'SummonerService', 'Main', function($scope,$routeParams,SummonerService){
+.controller('mainController', ['$scope','$routeParams', 'SummonerService', 'Main', function($scope,$routeParams,SummonerService,Main){
 		$scope.name = $routeParams.name;
 		$scope.region = $routeParams.region;
 		$scope.roleList=[
@@ -93,5 +93,10 @@ angular.module('creepScore.main',['ngRoute'])
 					$scope.display=$scope.testThree;
 					break;
 			}
+		}
+		Main.setUpChampions().then(success){
+			$scope.adc=success.adc;
+			$scope.mid=success.mid;
+			$scope.topLane =success.top;
 		}
 }])
