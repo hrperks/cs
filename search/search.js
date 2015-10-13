@@ -8,10 +8,11 @@ angular.module('creepScore.search',['ngRoute'])
 		controller: 'searchController'
 	})
 }])
-.factory('Home',function($http,$log,$q){
+.factory('Home',function($http,$log,$q,ChampionService){
 	return{
 		searchSummoner: function(data){
 			var p = $q.defer();
+			if(ChampionService.championList.length==0){data.getChampions=true;}
 			$http.post('engine.php?method=route',{class:'search',function:'getSummoner', data: data})
 				.then(function(success){
 					log(success, 'search.searchSummoner success-');

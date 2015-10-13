@@ -10,7 +10,10 @@ class search extends RiotApi{
 	}
 
 	public function getSummoner(){
-		return $summoner = $this->searchSummoner($this->data->region, $this->data->name);
+		$summoner = $this->searchSummoner($this->data->region, $this->data->name);
+		
+		if($this->data->getChampions) $summoner->championList = self::getChampions();
+		return $summoner;
 	}
 }
 ?>
