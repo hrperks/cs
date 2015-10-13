@@ -6,11 +6,11 @@
 	</div>
 	<div class="row" ng-repeat="dis in display" >
 		<div ng-if="dis.champs.length>0">
-		<h1> {{dis.title}} </h1>
+		<h1> level {{dis.title}} </h1>
 		<h4> {{dis.desc}} </h4>
 		<hr>
 		<div class="col-sm-1" ng-repeat="champ in dis.champs">
-			<p>{{champ.champion.name}}</p>
+			<input type="checkbox" ng-change="levelup(dis,champ)">{{champ.champion.name}}
 		</div>
 		</div>
 	</div>
