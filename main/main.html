@@ -1,2 +1,7 @@
-<h1> infomation was requested for </h1>
-<p>{{name}} on the server {{region}} </p>
+<div class="container">
+<div class = "row">
+	<div class="col-sm-4 col-sm-offset-4">
+		<select name="role" id="role" ng-model="roleSel" ng-options="roles.value for roles in roleList" ng-change="console.log('I changed! to {roleSel}')"></select>
+	</div>
+</div>
+</div>
