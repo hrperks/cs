@@ -142,8 +142,8 @@ angular.module('creepScore.main',['ngRoute'])
 			}
 		}
 		Main.setUpChampions().then(function(success){
-			$scope.adc=success.adc;
-			$scope.mid=success.mid;
-			$scope.topLane =success.top;
+			$scope.adc={levelZero: success.adc,LevelOne: [],LevelTwo: [],LevelThree: [],LevelFour: [],LevelFive: [],LevelSix: [],LevelSeven: [],LevelEight: [],LevelNine: [],LevelTen: [],LevelEleven: [],LevelTwelve: [],LevelThirteen: []};
+			$scope.mid={levelZero: success.mid,LevelOne: [],LevelTwo: [],LevelThree: [],LevelFour: [],LevelFive: [],LevelSix: [],LevelSeven: [],LevelEight: [],LevelNine: [],LevelTen: [],LevelEleven: [],LevelTwelve: [],LevelThirteen: []};
+			$scope.top={levelZero: success.top,LevelOne: [],LevelTwo: [],LevelThree: [],LevelFour: [],LevelFive: [],LevelSix: [],LevelSeven: [],LevelEight: [],LevelNine: [],LevelTen: [],LevelEleven: [],LevelTwelve: [],LevelThirteen: []};
 		});
 }])
