@@ -5,8 +5,8 @@
 		</div>
 	</div>
 	<div class="row" ng-repeat="dis in display" >
-		<div class="row">
-			<div ng-if="dis.champs.length>0">
+		<div ng-if="dis.champs.length>0">
+			<div class="row">
 			<h1> level {{dis.title}} </h1>
 			<div class="col-sm-3" style="color: green">
 				<h4> {{dis.desc.obj}} </h4>
@@ -19,8 +19,10 @@
 			</div>
 		</div>
 		<hr>
+		<div class="row">
 		<div class="col-sm-1" ng-repeat="champ in dis.champs">
 			<input type="checkbox" ng-model="Test" ng-change="levelup(dis,champ)"><img src="http://ddragon.leagueoflegends.com/cdn/5.20.1/img/champion/{{champ.champion.image.full}}" height="16px">{{champ.champion.name}}
+		</div>
 		</div>
 		</div>
 	</div>
