@@ -1,8 +1,14 @@
 body {
-	background: #00DF61
+	background: black;
+}
+hr{
+	color:white;
 }
 #missionDiv{
-	background: #32dc76;
-	border-color: #EEFE00;
-	color:#9C90A1;
+	background: #4fff31;
+	border-color: #304eff;
+	color:#304eff;
+}
+h1{
+	color:#4FFF31;
 }
