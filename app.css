@@ -5,8 +5,10 @@ hr{
 	color:white;
 }
 #missionDiv{
-	background: #4fff31;
 	border-color: #304eff;
+	color:#4FFF31;
+}
+#btn-royal{
 	color:#304eff;
 }
 h1{
