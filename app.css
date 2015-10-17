@@ -4,7 +4,7 @@ body {
 hr{
 	color:white;
 }
-#container{
+.container{
 		background: #333333;
 }
 #missionDiv{
@@ -12,7 +12,7 @@ hr{
 	color:#4FFF31;
 }
 .btn-royal{
-	color:#304eff;
+	background-color:#304eff;
 }
 h1{
 	color:#4FFF31;
