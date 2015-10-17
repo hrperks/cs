@@ -4,12 +4,14 @@ body {
 hr{
 	color:white;
 }
+#container{
+		background: #333333;
+}
 #missionDiv{
-	background: #333333;
 	border-color: #304eff;
 	color:#4FFF31;
 }
-#btn-royal{
+.btn-royal{
 	color:#304eff;
 }
 h1{
