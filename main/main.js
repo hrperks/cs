@@ -119,7 +119,7 @@ angular.module('creepScore.main',['ngRoute'])
 		$scope.name = $routeParams.name;
 		$scope.region = $routeParams.region;
 		$scope.roleList=[
-		{name:"nothing", value:""},
+		{name:"frequently asked Questions", value:"faq"},
 		{name:"middle lane", value:"mid"},
 		{name:"attack Damage Carry", value:"adc"},
 		{name:"Top Lane", value:"top"},
