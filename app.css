@@ -1,3 +1,8 @@
 body {
-	background: url("img/background.JPG")
+	background: #00DF61
+}
+#missionDiv{
+	background: #32dc76;
+	border-color: #EEFE00;
+	color:#9C90A1;
 }
