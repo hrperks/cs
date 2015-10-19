@@ -1,5 +1,5 @@
 body {
-	background: black;
+	background: white;
 }
 hr{
 	color:white;
@@ -8,10 +8,11 @@ p{
 	color:#4FFF31;
 }
 .container{
-		background: #333333;
+		background: #3F403E;
 }
 #missionDiv{
 	border-color: #304eff;
+	background: #BDBFBA;
 	color:#4FFF31;
 }
 #top{
@@ -21,6 +22,9 @@ p{
 	background-color:#304eff;
 	color:white;
 }
+h2{
+	color:#304eff;
+}
 h1{
 	text-align: center;
 	color:#4FFF31;
@@ -28,3 +32,12 @@ h1{
 h3{
 	color:#304eff;
 }
+/*
+	main: white;
+	1shade: #3F403E;
+	2shade: #BDBFBA;
+
+	Text: #4FFF31;
+
+	headings: #304eff;
+*/
