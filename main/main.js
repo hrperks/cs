@@ -126,23 +126,19 @@ angular.module('creepScore.main',['ngRoute'])
 		];
 		$scope.display={};
 		$scope.roleSel = $scope.roleList[0];
-		$scope.faq=true;
+		
 		$scope.test = function(){
 			switch($scope.roleSel.value){
 				case "mid":
-					$scope.faq=false;
 					$scope.display=$scope.mid;
 					break;
 				case "adc":
-					$scope.faq=false;
 					$scope.display=$scope.adc;
 					break;
 				case "top":
-					$scope.faq=false;
 					$scope.display=$scope.top;
 					break;
 				default:
-					$scope.faq=true;
 					$scope.display={};
 					break;
 			}
