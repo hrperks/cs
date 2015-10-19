@@ -23,7 +23,7 @@
 		</div>
 		<hr>
 		<div class="row">
-		<div class="col-sm-2" ng-repeat="champ in dis.champs">
+		<div id="champs" class="col-sm-2" ng-repeat="champ in dis.champs">
 			<input type="checkbox" ng-model="Test" ng-change="levelup(dis,champ)"><img src="http://ddragon.leagueoflegends.com/cdn/5.20.1/img/champion/{{champ.champion.image.full}}" height="16px">{{champ.champion.name}}
 		</div>
 		</div>

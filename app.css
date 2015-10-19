@@ -12,8 +12,10 @@ p{
 }
 #missionDiv{
 	border-color: #304eff;
-	background: #BDBFBA;
 	color:#4FFF31;
+}
+#champs{
+	background: #BDBFBA;
 }
 #top{
 	color:#4FFF31;
