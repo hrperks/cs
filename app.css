@@ -6,10 +6,10 @@ hr{
 	color:white;
 }
 p{
-	color:#4FFF31;
+	/*color:#4FFF31;*/
 }
 li{
-	color:#4FFF31;
+	/*color:#4FFF31;*/
 }
 .container{
 		/*background: #3F403E;*/
@@ -17,13 +17,13 @@ li{
 }
 #missionDiv{
 	border-color: #304eff;
-	color:#4FFF31;
+	/*color:#4FFF31;*/
 }
 #role{
 	background-color: black;
 }
 #top{
-	color:#4FFF31;
+	/*color:#4FFF31;*/
 }
 .btn-royal{
 	background-color:#304eff;
@@ -34,7 +34,7 @@ h2{
 }
 h1{
 	text-align: center;
-	color:#4FFF31;
+	/*color:#4FFF31;*/
 }
 h3{
 	color:#304eff;
